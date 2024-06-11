@@ -39,9 +39,26 @@ class BusinessContact(BaseContact):
     def label_lenght(self):
         self.lenght = len(self.name) + 1 + len(self.surname)
         return self.lenght
-    
-cardType = int(input('Proszę podać rodzaj kontaktu, wybierając cyfrę - 1.Zwykły, 2.Biznesowy'))
-cardQuantity = int(input('Proszę podać ilość osób do wygenerowania'))
+
+while True:
+    try:
+        cardType = int(input('Proszę podać rodzaj kontaktu, wybierając cyfrę - 1.Zwykły, 2.Biznesowy'))
+        if cardType < 1 or cardType > 2:
+            print('Proszę podać cyfrę 1 lub 2')
+            continue
+        else:
+            break
+    except:
+        print('Proszę podać cyfrę')
+        continue
+
+while True:
+    try:
+        cardQuantity = int(input('Proszę podać ilość osób do wygenerowania'))
+        break
+    except:
+        print('Proszę podać liczbę całkowitą')
+        continue
 
 def create_contacts(cardType,cardQuantity):
 
