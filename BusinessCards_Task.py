@@ -29,7 +29,7 @@ class BusinessContact(BaseContact):
         self.workTelephone = workTelephone
 
     def __str__(self):
-        return f'{self.name} | {self.surname} | {self.position} | {self.company} | {self.workTelephone} | {self.email}'
+        return f'{self.name} | {self.surname} | {self.telephone} | {self.position} | {self.company} | {self.workTelephone} | {self.email}'
 
     def contact(self):
         print ('Wybieram numer służbowy ' + str(self.workTelephone) + ' i dzwonię do ' + str(self.name) + ' ' + str(self.surname))    
