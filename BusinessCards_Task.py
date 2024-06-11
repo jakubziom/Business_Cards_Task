@@ -14,7 +14,7 @@ class BaseContact:
     
     def contact(self):
         print ('Wybieram numer ' + str(self.telephone) + ' i dzwonię do ' + str(self.name) + ' ' + str(self.surname))
-        return '----------'
+        return 
 
     @property
     def label_lenght(self):
@@ -32,8 +32,8 @@ class BusinessContact(BaseContact):
         return f'{self.name} | {self.surname} | {self.telephone} | {self.position} | {self.company} | {self.workTelephone} | {self.email}'
 
     def contact(self):
-        print ('Wybieram numer służbowy ' + str(self.workTelephone) + ' i dzwonię do ' + str(self.name) + ' ' + str(self.surname))    
-        return '----------'
+        print ('Wybieram numer służbowy ' + str(self.workTelephone) + ' i dzwonię do ' + str(self.name) + ' ' + str(self.surname))   
+        return 
 
     @property
     def label_lenght(self):
@@ -66,13 +66,13 @@ def create_contacts(cardType,cardQuantity):
         if cardType == 1:
             basePerson = BaseContact(name=fake.name(),surname=fake.last_name(),telephone=fake.phone_number(),email=fake.email())
             print(basePerson)
-            print(basePerson.contact())
-
+            basePerson.contact()
+            print ('----------') 
         elif cardType == 2:
             businessPerson = BusinessContact(name=fake.name(),surname=fake.last_name(),telephone=fake.phone_number(),position=fake.job(),company=fake.company(),workTelephone=fake.phone_number(),email=fake.email())
             print(businessPerson)
-            print(businessPerson.contact())
-
+            businessPerson.contact()
+            print ('----------')  
     return
 
 create_contacts(cardType,cardQuantity)
